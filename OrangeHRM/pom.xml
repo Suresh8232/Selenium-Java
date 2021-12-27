@@ -17,6 +17,7 @@
     <maven.compiler.target>1.7</maven.compiler.target>
 	<junit.version>4.13.1</junit.version>
 	<cucumber.version>7.1.0</cucumber.version>
+	<slf4j.version>1.7.32</slf4j.version>
   </properties>
 
   <repositories>
@@ -102,11 +103,15 @@
             <version>0.8.6</version>
         </dependency>
 
-<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
 <dependency>
-    <groupId>com.google.protobuf</groupId>
-    <artifactId>protobuf-java</artifactId>
-    <version>3.4.0</version>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>${slf4j.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>${slf4j.version}</version>
 </dependency>
 
 
@@ -135,6 +140,12 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
+		  <configuration>
+					<!-- Suite testng xml file to consider for test execution -->
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>

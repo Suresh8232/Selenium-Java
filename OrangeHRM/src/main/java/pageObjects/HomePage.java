@@ -27,9 +27,8 @@ public class HomePage extends CommonSteps {
 	//Actions to be performed on login page
 	
 	public String verifyDashboardText() {
-		waitForElementtoVisible(5, DashboardText);
-		String text = DashboardText.getText();
-		return text;
+		//waitForElementtoVisible(5, DashboardText);
+		return DashboardText.getText();
 	}
 
 }

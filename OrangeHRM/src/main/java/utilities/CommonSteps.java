@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonSteps {
 	
-	private WebDriver driver;
+	public WebDriver driver;
 	
 	//Generic methods
 	

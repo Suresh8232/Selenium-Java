@@ -1,14 +1,13 @@
 package testRunner;
 
-import org.junit.runner.RunWith;
+import org.testng.annotations.Test;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
 /**
  * Test Runner file to run the test cases based on given parameters.
  */
-@RunWith(Cucumber.class)
 @CucumberOptions(
 		features = {"src/test/resources/features"},
 		glue = {"stepDefinitions", "appHooks"},
@@ -17,8 +16,8 @@ import io.cucumber.junit.CucumberOptions;
 				"timeline:test-output-thread/"
 		}
 		)
-
-public class TestRunner {
+@Test
+public class TestRunner extends AbstractTestNGCucumberTests {
 	
 
 }
